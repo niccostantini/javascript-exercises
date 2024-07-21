@@ -1,4 +1,8 @@
-const sumAll = function() {
+const sumAll = function(start, end) {
+
+        array = Array.from({length: end}, (_, i) => i + start)
+        return array.reduce((a, b) => a + b, 0)
+
 
 };
 
