@@ -1,8 +1,19 @@
 const sumAll = function(start, end) {
 
-        array = Array.from({length: end}, (_, i) => i + start)
-        return array.reduce((a, b) => a + b, 0)
+    const checkStart = !(typeof start === 'number');
+    const checkEnd = !(typeof end === 'number');
 
+    if (checkStart || checkEnd) {return 'ERROR'}
+    else if (start >= 0 && end >= 0){
+            if (start > end) {
+                let temp = start;
+                start = end;
+                end = temp;
+            }
+
+            array = Array.from({length: end}, (_, i) => i + start)
+            return array.reduce((a, b) => a + b, 0)
+        } else {return 'ERROR'}
 
 };
 
